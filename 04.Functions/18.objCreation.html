@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name) {
+        if (this instanceof Person){
+            this.name = name;
+        }
+        else {
+            throw Error("You must use new with Person");
+        }
+    }
+
+    var correctPerson = new Person("Art");
+//    var callPerson = Person("Art");
+    var correctedCallPerson = Person.call(correctPerson,"Art222"); //but correctperson will be modified
+
+    console.log(correctPerson);
+    console.log(correctedCallPerson);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+<script>
+    var str = "Hello world!"
+    console.log(str.repeat(3));
+    console.log(str.startsWith("Hel"));
+    console.log(str.endsWith("ld!"));
+    console.log(str.includes("lo w"));
+
+    console.log(str.startsWith("e", 1));// str begining in position 4
+    console.log(str.endsWith("e",str.length-9)); //str last 9 chars excepted
+    console.log(str.includes("e", 1));
+
+    var name = "Art"
+    var msg = `Hello ${name} !`;
+    console.log(msg);
+    var lines = `1)
+2)
+3)`;
+    console.log(lines);
+
+</script>
+</body>
+</html>

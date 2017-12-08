@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f(a, b= "default", c) {
+        b = a || b;
+        console.log(b)
+    }
+    f();
+    f(2);
+
+    function mixArgs(a, b) {
+        console.log(a===arguments[0]);
+        console.log(b===arguments[1]);
+        a = 7;
+        b=3;
+        console.log(a===arguments[0]);
+        console.log(b===arguments[1]);
+    }
+    mixArgs(5,6);
+</script>
+</body>
+</html>
