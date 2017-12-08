@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var reflect= (value) => value;
+/*    var reflect = function (value) {
+        return value;
+    }*/
+    var sum  = (a,b) => a+b;
+
+    var doNothing = () => {};
+
+    console.log(typeof sum() === "Function")
+
+    var arr = [5,7,6,9,2];
+
+    arr.sort((a,b) => b-a); //desc sort
+
+    console.log(arr);
+</script>
+</body>
+</html>
