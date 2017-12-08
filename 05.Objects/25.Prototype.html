@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let person = {
+         getGreeting() {
+             console.log("Hello");
+         }
+    }
+
+    let dog = {
+        getGreeting() {
+            console.log("Woof");
+        }
+    }
+
+//    let friend = Object.create(person);
+//    console.log(friend.getGreeting());
+//    console.log(Object.getPrototypeOf(friend) === person);
+//
+//    Object.setPrototypeOf(friend, dog);
+//    console.log("===========================");
+//    console.log(friend.getGreeting());
+//    console.log(Object.getPrototypeOf(friend) === dog);
+
+    let friend = {
+        getGreeting(){
+//            console.log(Object.getPrototypeOf(this).getGreeting.call(this))+ " HI";
+            super.getGreeting();        //ES6
+        }
+    }
+
+    Object.setPrototypeOf(friend, person);
+    let relative = Object.create(friend);
+
+    console.log(friend.getGreeting());
+
+
+        console.log(person.getGreeting());
+        console.log(friend.getGreeting());
+        console.log(relative.getGreeting());
+
+
+</script>
+</body>
+</html>
