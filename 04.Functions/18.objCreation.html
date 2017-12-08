@@ -7,7 +7,7 @@
 <body>
 <script>
     function Person(name) {
-        if (this instanceof Person){
+        if (this instanceof Person){ //ES6   if(typeof new.target != undefined)
             this.name = name;
         }
         else {
