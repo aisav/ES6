@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(Object.is(-0,+0))  //false
+    console.log(Object.is(1, '1')) //false
+    console.log(Object.is(0, '')) // false
+    console.log(Object.is(NaN, NaN)) // true
+
+    var o = {a:1};
+    var copy = Object.assign({}, o)
+    console.log(o)
+
+    var o1 = {a:1};
+    var o2 = {b:2, c:2};
+    var o3 = {c:3};
+
+    o = Object.assign({}, o1, o2, o3)       //merging ob-s
+    console.log(o)
+
+</script>
+</body>
+</html>
