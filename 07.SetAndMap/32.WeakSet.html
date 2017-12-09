@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let testSet = new Set([0, 1,0]);
+    var obj = {
+        f:"v"
+    };
+    testSet.add(obj);
+
+    console.log("after setting obj to null, we can get its value from set");
+
+    obj = null;
+
+    console.log([...testSet][2]);
+
+    let weakS = new WeakSet();
+
+//    we ca not use here primitives, only Objects
+//    weakS.add(1)    //The Errooooooooooor
+    let k1 = {}, k2 = {};
+//    beacause k1 !== k2
+    weakS.add(k1);
+    weakS.add(k2);
+
+    if(weakS.has(k2)) {
+        weakS.delete(k1);
+    }
+// weakSet has not size property
+//    console.log(weakS.size);    //Error
+
+
+
+</script>
+</body>
+</html>
