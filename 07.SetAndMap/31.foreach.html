@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    set = new Set([1,1,9,7,9,8,7,1]);
+    set.forEach(
+        function (val, key, ownerSet) {
+            console.log(key + "----" + val);
+            console.log(ownerSet);
+        });
+
+    var p = {
+        output(value) {
+            console.log(value)
+        },
+        process(dataset) {
+            dataset.forEach(function (v) {
+                    this.output(v);
+                },
+                this
+            )
+        },
+        processWithArrowFunction(dataset) {
+            dataset.forEach((v) =>this.output(v))
+        },
+
+        convertToArray(dataset) {
+            let a = [...dataset];
+            console.log(a);
+            return a;
+        }
+    }
+
+    p.process(set);
+    p.processWithArrowFunction(set);
+    p.convertToArray(set);
+
+</script>
+</body>
+</html>
