@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let set = new Set();
+    set.add(7);
+    set.add(7);
+    set.add("7");
+
+    console.log(set.size); // 2,  aded values: 7 and "7"
+
+    let o1 = {};
+    let o2 = {};
+
+    set.add(o1);
+    set.add(o2);
+    console.log(set.size); //4, aded values: o1 and o2
+
+    if(set.has(7) ) {
+        set.delete(7);
+    }
+
+    if ( set.has("7")){
+        set.delete("7")
+    }
+
+    console.log(set.size); //2, deleted values: 7 and "7"
+
+    set.clear();
+
+    console.log(set.size); //0, deleted all als
+
+
+
+</script>
+</body>
+</html>
