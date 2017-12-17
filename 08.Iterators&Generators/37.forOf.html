@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,9];
+    for(let num of arr) {
+        console.log(num);
+    }
+    console.log("////////////////////////////////////////////////////////");
+
+    let it = arr[Symbol.iterator]();
+
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+
+    console.log("////////////check is Iterable/////");
+    function isIterable(obj) {
+        return typeof obj[Symbol.iterator] === "function";
+    }
+
+    console.log(isIterable([1,2,8]));
+
+
+
+</script>
+</body>
+</html>
