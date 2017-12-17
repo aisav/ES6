@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iter</title>
+</head>
+<body>
+<script>
+    //    sandard away
+    let colors = ["red", "blue", "green"];
+
+    for (let i = 0; i < colors.length; ++i) {
+        console.log(colors[i]);
+    }
+
+    //    ES5
+    function createIterator(items) {
+        var i = 0;
+
+        return {
+            next: function () {
+                var done = i >= items.length;
+                var value = done ? undefined : items[i++];
+                return {
+                    done: done,
+                    value: value
+                };
+            }
+        };
+    }
+
+    var iterator = createIterator([1, 7, 3]);
+
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+    //    ES6 Generator
+    function* newIterator() {
+        yield "first";
+        yield "second";
+        yield "third";
+    }
+
+    const it = newIterator();
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+
+    function* newIterator2() {
+        let items = [4, 9, 7]
+        for (let i = 0; i < items.length; ++i) {
+            yield items[i];
+        }
+    }
+
+    const it2 = newIterator2();
+    console.log(it2.next());
+    console.log(it2.next());
+    console.log(it2.next());
+    console.log(it2.next());
+
+    var obj = {
+        *createIterator(array){
+            for (let i = 0; i < array.length; ++i) {
+                yield array[i];
+            }
+        }
+    }
+
+    var it3 = obj.createIterator([8,6,9]);
+    console.log(it3.next());
+    console.log(it3.next());
+    console.log(it3.next());
+    console.log(it3.next());
+</script>
+</body>
+</html>
