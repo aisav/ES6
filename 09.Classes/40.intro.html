@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name) {
+        this.name = name;
+    }
+
+    Person.prototype.sayName = function () {
+        return this.name;
+    }
+
+    var p = new Person("Art");
+
+    console.log(p.sayName());
+    console.log(p.name)     //name is not private
+</script>
+</body>
+</html>
