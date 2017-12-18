@@ -7,6 +7,7 @@
 <body>
 <div id="divId">divValue</div>
 <script>
+    let propertyName = "sayName"
     class CustomHtmlElement {
         constructor(elem){
             this.element = elem;
@@ -17,6 +18,9 @@
 
         set html( val) {
             this.element.innerHTML += val;
+        }
+        [propertyName]() {
+            console.log("calling sayName funct. Html tag value is: "+ this.html);
         }
     }
 
@@ -32,6 +36,8 @@
     var obj = new CustomHtmlElement(divEl);
     console.log("div element value is:");
     console.log(obj.html);
+
+    console.log(obj.sayName());
 
 </script>
 </body>
