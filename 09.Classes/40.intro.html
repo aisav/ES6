@@ -17,7 +17,28 @@
     var p = new Person("Art");
 
     console.log(p.sayName());
-    console.log(p.name)     //name is not private
+    console.log(p.name);     //name is not private
+
+    console.log(p instanceof Person);
+    console.log(p instanceof Object);
+
+    console.log("=============with PersonClass=================");
+
+    class PersonClass {
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayName ()  {
+            console.log(this.name+".sayName");
+        }
+    }
+
+    var pC = new PersonClass("ArtClass");
+    pC.sayName();
+
+
+
 </script>
 </body>
 </html>
