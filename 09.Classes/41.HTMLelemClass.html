@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="divId">divValue</div>
+<script>
+    class CustomHtmlElement {
+        constructor(elem){
+            this.element = elem;
+        }
+        get html() {
+            return this.element.innerHTML
+        }
+
+        set html( val) {
+            this.element.innerHTML += val;
+        }
+    }
+
+    var descriptor = Object.getOwnPropertyDescriptor(CustomHtmlElement.prototype, "html");
+
+  console.log("is there property wth name get")
+    console.log("get" in descriptor);
+
+    console.log("is descriptor enumarable");
+    console.log(descriptor.enumerable);
+
+    var divEl = document.getElementById("divId");
+    var obj = new CustomHtmlElement(divEl);
+    console.log("div element value is:");
+    console.log(obj.html);
+
+</script>
+</body>
+</html>

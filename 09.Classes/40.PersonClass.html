@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Person</title>
+</head>
+<body>
+<script>
+
+    class PersonClass {
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayName ()  {
+            console.log(this.name+".sayName");
+        }
+    }
+
+    var p = new PersonClass("ArtClass");
+    p.sayName();
+
+
+    console.log(p instanceof PersonClass);
+    console.log(p instanceof Object);
+</script>
+</body>
+</html>
